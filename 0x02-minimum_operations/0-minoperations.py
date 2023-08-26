@@ -41,20 +41,15 @@ def minOperations(n):
 
         # if can't be devided
         if remaining % pasted_chars != 0:
-            # paste current clipboard
-            pasted_chars += clipboard
             # increment operations counter
             counter += 1
         else:
             # copyall
             clipboard = pasted_chars
-            # paste
-            pasted_chars += clipboard
             # increment operations counter
             counter += 2
 
+        # paste current clipboard
+        pasted_chars += clipboard
     # if got the desired result
-    if pasted_chars == n:
-        return counter
-    else:
-        return 0
+    return counter if pasted_chars == n else 0

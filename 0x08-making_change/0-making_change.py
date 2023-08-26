@@ -14,7 +14,7 @@ def makeChange(coins, total):
     '''
     if total <= 0:
         return 0
-    table = [sys.maxsize for i in range(total + 1)]
+    table = [sys.maxsize for _ in range(total + 1)]
     table[0] = 0
     m = len(coins)
     for i in range(1, total + 1):
@@ -24,6 +24,4 @@ def makeChange(coins, total):
                 if subres != sys.maxsize and subres + 1 < table[i]:
                     table[i] = subres + 1
 
-    if table[total] == sys.maxsize:
-        return -1
-    return table[total]
+    return -1 if table[total] == sys.maxsize else table[total]

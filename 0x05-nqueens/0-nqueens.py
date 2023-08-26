@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''N Queens Challenge'''
 
+
 import sys
 
 
@@ -57,7 +58,7 @@ if __name__ == '__main__':
                     if cord[1] < n - 1:
                         r = cord[0]
                         c = cord[1]
-                for i in range(n - r):
+                for _ in range(n - r):
                     placed_queens.pop()
                 if r == n - 1 and c == n - 1:
                     placed_queens = []
